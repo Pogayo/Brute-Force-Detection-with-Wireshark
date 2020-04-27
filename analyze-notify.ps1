@@ -5,8 +5,8 @@ $text = Get-Content C:\Users\Perez\Desktop\CS\Wireshark\tmp.txt -Raw
 Write-Output $text
 
 $username = "perezogayo@gmail.com"
-$emailTo="receiver_email"
-$password = 'mygoodpassword12345'
+$emailTo="pogayo17@alustudent.com"
+$password = 'MygoodPasword'
 $securestring = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList $userName, $securestring
 
