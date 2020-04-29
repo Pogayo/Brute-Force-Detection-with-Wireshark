@@ -1,7 +1,7 @@
-param ($path, $duration=3600, $interface=7)
+param ($path,$duration=3600, $interface=7)
 #$duration specifies in seconds how long the capture should run
-#$path is the file path
 #$interface is the network interface to listen to
+#$path is the file path - this is required.
 cd $path
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8' #making sure the csv file is saved in utf-8 encoding
 tshark -i $interface -f "tcp port 21 or tcp port 20"  -a duration:$duration -w real.pcap

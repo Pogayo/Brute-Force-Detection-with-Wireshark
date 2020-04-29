@@ -17,7 +17,7 @@ $end=" `r`nBest regards, `r`nThe Powershell script you wrote"
 $message=$intro+$text+$end
 $username = "perezogayo@gmail.com"
 $emailTo="pogayo17@alustudent.com"
-$password = 'GreatPassword'
+$password = '12345Dawaber14'
 $securestring = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList $userName, $securestring
 
