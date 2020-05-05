@@ -1,5 +1,5 @@
 param ($duration)
-(python analyze.py) > tmp.txt
+(python analyze.py) 
 
 $text = Get-Content tmp.txt -Raw 
 
@@ -10,14 +10,14 @@ $no=$result.Length
 $no=$no - 2 #1 is for the header and the other is for the newline to_string adds.
 echo $no
 #1 if we have potential attacks, send an email
-If ($no -gt 0)  { 
+If ($no -gt -1)  { 
 
 $intro="Dear Admin, `r`n"+ $no +" ip address(es) have(s) tried logging in more than 3 times in the past $duration seconds. Find details below. `r`n"
 $end=" `r`nBest regards, `r`nThe Powershell script you wrote"
 $message=$intro+$text+$end
 $username = "perezogayo@gmail.com"
 $emailTo="pogayo17@alustudent.com"
-$password = '12345Dawaber14'
+$password = 'Your Good Password here'
 $securestring = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential -ArgumentList $userName, $securestring
 

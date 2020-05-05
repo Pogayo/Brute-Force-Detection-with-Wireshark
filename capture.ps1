@@ -7,4 +7,4 @@ $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8' #making sure the csv fil
 tshark -i $interface -f "tcp port 21 or tcp port 20"  -a duration:$duration -w real.pcap
 tshark  -r real.pcap -Y "ftp" -T fields -e frame.number -e frame.time  -e ip.src -e ip.dst -e _ws.col.Protocol -e _ws.col.Info -E header=y -E separator="," -E bom=y -E quote=d -E occurrence=f  > real.csv
 copy-item -path real.csv -destination ftp-packets-real.csv
-./analyze-notify.ps1 -duration $duration
+./analyze-notify.ps1 

@@ -10,6 +10,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
+
+sys.stdout=open('tmp.txt', "w")
 
 data=pd.read_csv("ftp-packets-real.csv")
 #initial columns
